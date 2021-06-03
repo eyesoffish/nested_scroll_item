@@ -25,6 +25,9 @@ class _Page1State extends State<Page1> {
     
     _listScrollController1 = _shopCoordinator.newChildScrollController();
     _listScrollController2 = _shopCoordinator.newChildScrollController();
+    _listScrollController2.addListener(() { 
+      print("current scroll index" + (_listScrollController2.offset ~/ 200).toString());
+    });
     super.initState();
   }
 

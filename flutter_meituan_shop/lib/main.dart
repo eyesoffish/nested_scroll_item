@@ -58,7 +58,7 @@ class _ShopPageState extends State<ShopPage>
 
     _sliverAppBarMaxHeight ??= screenHeight;
     _pageScrollController ??= _shopCoordinator
-        .pageScrollController(_sliverAppBarMaxHeight - _sliverAppBarInitHeight);
+        .pageScrollController(0);
 
     _shopCoordinator.pinnedHeaderSliverHeightBuilder ??= () {
       return statusBarHeight + kToolbarHeight + _tabBarHeight;
@@ -77,7 +77,7 @@ class _ShopPageState extends State<ShopPage>
             //   expandedHeight: _sliverAppBarMaxHeight,
             // ),
             SliverToBoxAdapter(
-              child: Container(height: 500, color: Colors.red,),
+              child: Container(height: _sliverAppBarInitHeight, color: Colors.red,),
             ),
             SliverPersistentHeader(
               pinned: false,
