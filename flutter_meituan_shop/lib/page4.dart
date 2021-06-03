@@ -10,7 +10,7 @@ class Page4 extends StatefulWidget {
   _Page4State createState() => _Page4State();
 }
 
-class _Page4State extends State<Page4> {
+class _Page4State extends State<Page4> with AutomaticKeepAliveClientMixin {
   ShopScrollCoordinator _shopCoordinator;
   ShopScrollController _listScrollController;
   @override
@@ -34,4 +34,8 @@ class _Page4State extends State<Page4> {
       }
     );
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }
