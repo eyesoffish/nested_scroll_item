@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_meituan_shop/page4.dart';
 import 'page1.dart';
 import 'page2.dart';
 import 'page3.dart';
@@ -47,7 +48,7 @@ class _ShopPageState extends State<ShopPage>
   void initState() {
     super.initState();
     _shopCoordinator = ShopScrollCoordinator();
-    _tabController = TabController(vsync: this, length: 3);
+    _tabController = TabController(vsync: this, length: 4);
   }
 
   @override
@@ -100,6 +101,7 @@ class _ShopPageState extends State<ShopPage>
                     labelColor: Colors.black,
                     controller: _tabController,
                     tabs: <Widget>[
+                      Tab(text: "动态"),
                       Tab(text: "商品"),
                       Tab(text: "评价"),
                       Tab(text: "商家"),
@@ -112,6 +114,7 @@ class _ShopPageState extends State<ShopPage>
               child: TabBarView(
                 controller: _tabController,
                 children: <Widget>[
+                  Page4(shopCoordinator: _shopCoordinator,),
                   Page1(shopCoordinator: _shopCoordinator, parentController: _pageScrollController,),
                   Page2(shopCoordinator: _shopCoordinator),
                   Page3(),
